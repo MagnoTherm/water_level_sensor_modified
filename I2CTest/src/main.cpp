@@ -3,7 +3,7 @@
 
 static const uint8_t ADDR_LOW  = 119; // 0x77 — reads 8 pads
 static const uint8_t ADDR_HIGH = 120; // 0x78 — reads 12 pads
-static const uint16_t CAPACITIVE_THRESHOLD = 0; // TODO: set after observing dry/wet raw values
+static const uint16_t CAPACITIVE_THRESHOLD = 1000; // TODO: set after observing dry/wet raw values
 
 void setup() {
     Serial.begin(9600);
