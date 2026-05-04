@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Launch the Flash WLS Sensor app from the repo root, using the project venv.
 
-REPO_ROOT="/home/lauda/Desktop/water_level_sensor_modified"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
 cd "$REPO_ROOT"
 
