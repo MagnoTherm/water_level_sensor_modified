@@ -4,11 +4,10 @@ GUI app for flashing Grove Water Level Sensor firmware, designed to run on a Ras
 
 ## Setup (new Pi)
 
-After cloning the repo to the Pi's desktop, run the setup script once from the repo root:
+After cloning the repo to the Pi's desktop, run the setup script once:
 
 ```bash
-cd ~/Desktop/water_level_sensor_modified
-bash setup_desktop.sh
+bash ~/Desktop/water_level_sensor_modified/flash_wls_sensor_app/setup_desktop.sh
 ```
 
 This will:

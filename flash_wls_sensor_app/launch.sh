@@ -8,7 +8,13 @@ cd "$REPO_ROOT"
 
 PYTHON="$REPO_ROOT/.venv/bin/python"
 
-if ! $PYTHON -c "import customtkinter" 2>/dev/null; then
+if [ ! -f "$PYTHON" ]; then
+    x-terminal-emulator -e bash -c "
+        python3 -m venv $REPO_ROOT/.venv
+        $PYTHON -m pip install -r $REPO_ROOT/flash_wls_sensor_app/requirements.txt
+        read -p 'Done. Press Enter to close...'
+    "
+elif ! $PYTHON -c "import customtkinter" 2>/dev/null; then
     x-terminal-emulator -e bash -c "
         $PYTHON -m pip install -r $REPO_ROOT/flash_wls_sensor_app/requirements.txt
         read -p 'Done. Press Enter to close...'

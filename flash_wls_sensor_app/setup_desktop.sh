@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # Run once after cloning to install the desktop shortcut for the current user.
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-APP_DIR="$SCRIPT_DIR/flash_wls_sensor_app"
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DESKTOP_FILE="$HOME/Desktop/FlashWLSSensor.desktop"
 
 cat > "$DESKTOP_FILE" << EOF
@@ -19,5 +18,6 @@ EOF
 
 chmod +x "$DESKTOP_FILE"
 chmod +x "$APP_DIR/launch.sh"
+gio set "$DESKTOP_FILE" metadata::trusted true
 
 echo "Shortcut installed to $DESKTOP_FILE"
