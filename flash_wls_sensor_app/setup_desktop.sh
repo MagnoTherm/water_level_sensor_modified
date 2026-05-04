@@ -18,6 +18,6 @@ EOF
 
 chmod +x "$DESKTOP_FILE"
 chmod +x "$APP_DIR/launch.sh"
-gio set "$DESKTOP_FILE" metadata::trusted true
+gio set "$DESKTOP_FILE" metadata::trusted yes
 
 echo "Shortcut installed to $DESKTOP_FILE"
