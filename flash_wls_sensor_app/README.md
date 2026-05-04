@@ -12,6 +12,6 @@ bash ~/Desktop/water_level_sensor_modified/flash_wls_sensor_app/setup_desktop.sh
 
 This will:
 - Create a `FlashWLSSensor` shortcut directly on the desktop
-- Set the correct executable permissions on the shortcut and `launch.sh`
+- Set the correct executable permissions on `launch.sh`
 
-The app will install its Python dependencies automatically on first launch.
+Double-click the shortcut and click **Execute** once — after that it will launch directly without prompting. The app will also install its Python dependencies automatically on first launch.
