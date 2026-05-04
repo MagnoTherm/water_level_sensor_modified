@@ -26,4 +26,15 @@ ln -sf "$APP_DESKTOP" "$DESKTOP_LINK"
 
 chmod +x "$APP_DIR/launch.sh"
 
+# Suppress libfm's executable confirmation dialog
+LIBFM_CONF="$HOME/.config/libfm/libfm.conf"
+if [ ! -f "$LIBFM_CONF" ]; then
+    mkdir -p "$(dirname "$LIBFM_CONF")"
+    printf '[config]\nquick_exec=1\n' > "$LIBFM_CONF"
+elif grep -q "^quick_exec=" "$LIBFM_CONF"; then
+    sed -i 's/^quick_exec=.*/quick_exec=1/' "$LIBFM_CONF"
+else
+    sed -i '/^\[config\]/a quick_exec=1' "$LIBFM_CONF"
+fi
+
 echo "Shortcut installed to $DESKTOP_LINK"
