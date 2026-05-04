@@ -16,19 +16,7 @@ Terminal=false
 Categories=Utility;
 EOF
 
-chmod +x "$DESKTOP_FILE"
 chmod +x "$APP_DIR/launch.sh"
-gio set "$DESKTOP_FILE" metadata::trusted yes
 
-# Suppress PCManFM's executable confirmation dialog
-PCMANFM_CONF="$HOME/.config/pcmanfm/default/pcmanfm.conf"
-if [ ! -f "$PCMANFM_CONF" ]; then
-    mkdir -p "$(dirname "$PCMANFM_CONF")"
-    printf '[config]\nquick_exec=1\n' > "$PCMANFM_CONF"
-elif grep -q "^quick_exec=" "$PCMANFM_CONF"; then
-    sed -i 's/^quick_exec=.*/quick_exec=1/' "$PCMANFM_CONF"
-else
-    sed -i '/^\[config\]/a quick_exec=1' "$PCMANFM_CONF"
-fi
 
 echo "Shortcut installed to $DESKTOP_FILE"
