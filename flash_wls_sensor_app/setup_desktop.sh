@@ -21,7 +21,7 @@ chmod +x "$APP_DIR/launch.sh"
 gio set "$DESKTOP_FILE" metadata::trusted yes
 
 # Suppress PCManFM's executable confirmation dialog
-PCMANFM_CONF="$HOME/.config/pcmanfm/LXDE-pi/pcmanfm.conf"
+PCMANFM_CONF="$HOME/.config/pcmanfm/default/pcmanfm.conf"
 if [ -f "$PCMANFM_CONF" ]; then
     if grep -q "^quick_exec=" "$PCMANFM_CONF"; then
         sed -i 's/^quick_exec=.*/quick_exec=1/' "$PCMANFM_CONF"
