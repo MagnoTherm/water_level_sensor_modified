@@ -63,7 +63,7 @@ def _flash(hex_path: str, q: "queue.Queue"):
         return
 
     cmd = [
-        sys.executable, "-m", "pymcuprog",
+        sys.executable, "-m", "pymcuprog.pymcuprog",
         "write",
         "-t", "uart",
         "-u", port,
